@@ -1,6 +1,9 @@
 # **COMPUTER PROGRAMMING 2: COURSE PROJECT**
 ## **Title : Comprehensive Accounting Program** 
-## **Platfrom: C++**
+## **Platform: C++**
+## **Contributors:-**
+ - Ritvik Singh(3035553044)
+ - Mesbaul Alam Khan(3035548740)
 
 ### Problem Statement
 
