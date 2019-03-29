@@ -1,5 +1,6 @@
 # **COMPUTER PROGRAMMING 2: COURSE PROJECT**
 ## **Title : Comprehensive Accounting Program** 
+## **Platfrom: C++**
 
 ### Problem Statement
 
