@@ -3,7 +3,7 @@
 
 ### Problem Statement
 
- With the recent growth in the startup Culture and booming businesses, the need for a technological platform for wealth management becomes necessary. Thus, through the course of this project, we aim to develop a *Comprehensive Accounting Program* which serves as a tool for firms to manage and oversee their financial state and as a result, make business decisions. The implementation of this software will enable firms to monitor and record their transactions, account for their assets, liabilities and equities, and asses their present situation with respect to debts, cashflow, and goodwill etc. via various *financial statements* and *accounting ratios.*
+ With the recent growth in the Startup Culture and Booming Businesses, the need for a technological platform for Wealth Management becomes necessary. Thus, through the course of this project, we aim to develop a *Comprehensive Accounting Program* which serves as a tool for firms to manage and oversee their financial state and as a result, make business decisions. The implementation of this software will enable firms to monitor and record their transactions, account for their assets, liabilities and equities, and asses their present situation with respect to debts, cashflow, and goodwill etc. via various *financial statements* and *accounting ratios.*
 
 ### Problem Setting
 
