@@ -11,21 +11,25 @@
 
 ### Problem Setting
 
-As previously stated, one of the main purpose of our project is to assist firms in making better decisions in the near future. Our first assumption relies on the fact that this project is *solely based upon the finances of companies and firms* rather than individuals. As companies add a new entry, they will be asked whether it is an expense or an income. Depending on their answer, the entry will be adjusted accordingly. Firms can always look up details on their transactions such as dates, types or amount. But the main usefulness of this project is that it accumulates all the data and provides an overall state of the business to the company through various statistics, such as *ratio analysis*, *threshold expense*, and year end *income statements* and *balance sheets*.
+As previously stated, one of the main purpose of our project is to assist firms in making better decisions in the near future. Our first assumption relies on the fact that this project is *solely based upon the finances of companies and firms* rather than individuals. As companies add a new entry, they will be asked whether it is an expense or an income. Depending on their answer, the entry will be adjusted accordingly. Firms can always look up details on their transactions such as dates, types or amount. But the main usefulness of this project is that it accumulates all the data and provides an overall state of the business to the company through various statistics, such as *ratio analysis*, *threshold expense*, and year end *income statement*.
+
+### Assumptions
+
+-The program is assumed to run for a single fiscal period only till such time the user decides to exit.Financial Ratios and Income Statement are prepared only for this period.
 
 
 ### Functionality and Key Features
 
 - The program records every expense and revenue made by the company and keeps track of its assets and liabilities.
 
-- All transactions will include amount, the date and the classifications (Asset, Liability or Equity).
+- All transactions will include amount, date, classifications (Income or Expense), the Account (Cash or Credit Card or Debit Card), and the Account Title.
 
 - Records can be added, deleted, modified, viewed at any time.
 
-- The program will alert the company if expenses exceed a certain threshold. 
+- The program will alert the company if expenses exceed a certain threshold,which is input by the user, they will then have the option to proceed with the transactino or not. 
 
-- The program will provide feedback to the company regarding certain data, such as monthly income and expenses, increasing amount of debts etc.
+- The program will provide feedback to the company regarding certain data, such as income and expense.
 
-- One additional function within the program will be used to prepare financial statements such as income statement and balance sheet for the company to reflect upon their financial position.
+- One additional function within the program will be used to prepare financial statements such as income statement for the company to reflect upon their financial position.
 
-- Using all the year end data, the program  will calculate various financial ratios to determine the profitability, efficiency , return on Investment, return on Assets etc. of the company which will aid future decision making process.
+- Records can be either searched according to Record ID (assigned to each transaction by the system). A multiple search function has also been implemented wherein records can be searched accourding to one field, and then multiple searches can be carried out within the previously searched records based on other fields, so that the user can narrow down to a single record or a group of records.
