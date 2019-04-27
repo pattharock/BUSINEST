@@ -13,27 +13,29 @@
 
 int main()
 {
-    Intro();
-    CLEAR_ALL_FILES();
-    record * r = new record[size];
+    Intro();  //This function introduces the program to the user
+    CLEAR_ALL_FILES();   //Empties the ratio file and the record file
+    record * r = new record[size];   //dynamic array for storing the records
     int mc, md, mcc;
     cout << "Please enter threshold for maximum expense incurred by Cash: ";
-    cin >> mc;
+    cin >> mc;    //threshold for cash expense
     cout << "Please enter threshold for maximum expense incurred by Debit Card: ";
-    cin >> md;
+    cin >> md;     //threshold for debit card expense
     cout << "Please enter threshold for maximum expense incurred by Credit Card: ";
-    cin >> mcc;
+    cin >> mcc;    //threshold for credit card expense
     int opt;
+
+    //this will run until the user decides to end the program. The options menu as a result will tend to keep on appearing.
     while(true)
     {
-        opt = OPTIONS();
+        opt = OPTIONS();    //displays the options to the user
         if(opt==1)
         {
             ADD_RECORD(r, size);
         }
         if(opt==2)
         {
-            if(rid==0)
+            if(rid==0)  //this is true if no records are added
             {
                 cout <<"No records have been added!" << endl;
             }
@@ -78,12 +80,12 @@ int main()
                 SHOW_INCOME_STATEMENT(r,rid);
             }
         }
-        
+
         if(opt == 7){
             FINANCIAL_RATIOS(r,rid);
         }
-        
-        if(opt==0)
+
+        if(opt==0)   //This is a parting message if user decides to end the program
         {
             cout<<endl<<endl<<endl;
             cout<<"Thanks for using our program !!"<<endl;
@@ -92,6 +94,6 @@ int main()
             exit(1);
         }
         BALANCE_CHECK(r,rid,mc,md,mcc);
-        
+
     }
 }

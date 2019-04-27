@@ -4,12 +4,9 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-//#include "SecondaryFunctions.hpp"
-//#include "RecordDefinition.hpp"
 
 
-
-
+// This function increases the size of the dynamic array by 2 times
 void ENLARGE(record *&r, int &n)
 {
     record * r_new = new record[n*2];
@@ -23,6 +20,7 @@ void ENLARGE(record *&r, int &n)
 }
 
 
+//This function is used to add a record to the dynamic array
 void ADD_RECORD(record *&r, int &n)
 {
     if(rid>=n)
@@ -41,6 +39,8 @@ void ADD_RECORD(record *&r, int &n)
     fout.close();
 }
 
+
+//This function is used to delete a record from the array by reducing array size by 1 and using pointers for deletion.
 void DELETE_RECORD(record *&r, int &id, int &n)
 {
     int rid_num;
@@ -81,6 +81,8 @@ void DELETE_RECORD(record *&r, int &id, int &n)
     fout.close();
 }
 
+
+// This function is used to Display all the records in the array.
 void DISPLAY_RECORDS()
 {
     cout << endl << endl << endl;
@@ -93,6 +95,7 @@ void DISPLAY_RECORDS()
     fin.close();
 }
 
+//This function is used to edit a previously entered record by searching for the RECORD ID of a particular record.
 void EDIT_RECORD(record *&r,int &rid)
 {
     cout << endl << endl << endl;
@@ -117,6 +120,7 @@ void EDIT_RECORD(record *&r,int &rid)
     fout.close();
 }
 
+//Using this function records can be searched accourding to one field, and then multiple searches can be carried out within the previously searched records based on other fields, so that the user can narrow down to a single record or a group of records.
 void MULTIPLE_SEARCH(record *&r, int rid)
 {
     cout << endl << endl << endl;
@@ -376,6 +380,8 @@ void MULTIPLE_SEARCH(record *&r, int rid)
     }
 }
 
+
+//This functions either searches a single record by its RECORD ID or calls the previous funtion to implement multiple search
 void SEARCH_RECORD(record *&r, int rid)
 {
     int choice;
@@ -405,7 +411,8 @@ void SEARCH_RECORD(record *&r, int rid)
     }
 }
 
-void BALANCE_CHECK(record *&r, int rid, int mc, int md, int mcc)
+// This funtion is used to check the threshold limit and prompt user to either increase threshhold or continue.
+void BALANCE_CHECK(record *&r, int rid, int &mc, int &md, int &mcc)
 {
     int mc0=0, md0=0, mcc0=0;
     for(int i = 0;i<rid;++i)
@@ -425,17 +432,60 @@ void BALANCE_CHECK(record *&r, int rid, int mc, int md, int mcc)
     }
     if(mc0>mc)
     {
-        cout << "****WARNING!****" << endl;
+        int choice,inc;
+        cout << "*WARNING!*" << endl;
         cout << "Limit crossed for maximum expense incurred by Cash!" << endl;
+        cout << "Enter 1 to increase cash threshold or enter 2 to continue: " << endl;
+        cout << "Choice: ";
+        cin >> choice;
+        if(choice==1)
+        {
+            cout << "Enter the amount by which you want to increase the threshold: ";
+            cin >> inc;
+            mc+=inc;
+        }
+        else
+        {
+            cout << "REMINDER: No warnings will be generated no matter how much cash expense increases" << endl;
+        }
+        
     }
     if(md0>md)
     {
-        cout << "****WARNING!****" << endl;
+        int choice, inc;
+        cout << "*WARNING!*" << endl;
         cout << "Limit crossed for maximum expense incurred by Debit Card!" << endl;
+        cout << "Enter 1 to increase debit card threshold or enter 2 to continue: " << endl;
+        cout << "Choice: ";
+        cin >> choice;
+        if(choice==1)
+        {
+            cout << "Enter the amount by which you want to increase the threshold: ";
+            cin >> inc;
+            md+=inc;
+        }
+        else
+        {
+            cout << "REMINDER: No warnings will be generated no matter how much debit card expense increases" << endl;
+        }
     }
     if(mcc0>mcc)
     {
-        cout << "****WARNING!****" << endl;
+        int choice,inc;
+        cout << "*WARNING!*" << endl;
         cout << "Limit crossed for maximum expense incurred by Credit Card!" << endl;
+        cout << "Enter 1 to increase credit card threshold or enter 2 to continue: " << endl;
+        cout << "Choice: ";
+        cin >> choice;
+        if(choice==1)
+        {
+            cout << "Enter the amount by which you want to increase the threshold: ";
+            cin >> inc;
+            mcc+=inc;
+        }
+        else
+        {
+            cout << "REMINDER: No warnings will be generated no matter how much credit card expense increases" << endl;
+        }
     }
 }
