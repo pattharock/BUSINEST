@@ -15,7 +15,9 @@ As previously stated, one of the main purpose of our project is to assist firms 
 
 ### Assumptions
 
--The program is assumed to run for a single fiscal period only till such time the user decides to exit.Financial Ratios and Income Statement are prepared only for this period.
+- The program is assumed to run for a single fiscal period only till such time the user decides to exit.Financial Ratios and Income Statement are prepared only for this period.
+- The program will prompt user to add in three values for threshold expense. If the expense crosses the respective limit, the user can either increase the threshold or continue anyways.
+
 
 
 ### Functionality and Key Features
