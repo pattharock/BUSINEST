@@ -13,6 +13,7 @@
 
 As previously stated, one of the main purpose of our project is to assist firms in making better decisions in the near future. Our first assumption relies on the fact that this project is *solely based upon the finances of companies and firms* rather than individuals. As companies add a new entry, they will be asked whether it is an expense or an income. Depending on their answer, the entry will be adjusted accordingly. Firms can always look up details on their transactions such as dates, types or amount. But the main usefulness of this project is that it accumulates all the data and provides an overall state of the business to the company through various statistics, such as *ratio analysis*, *threshold expense*, and year end *income statement*.
 
+
 ### Assumptions
 
 - The program is assumed to run for a single fiscal period only till such time the user decides to exit.Financial Ratios and Income Statement are prepared only for this period.
@@ -36,3 +37,25 @@ As previously stated, one of the main purpose of our project is to assist firms 
 
 - Records can be either searched according to Record ID (assigned to each transaction by the system). A multiple search function has also been implemented wherein records can be searched accourding to one field, and then multiple searches can be carried out within the previously searched records based on other fields, so that the user can narrow down to a single record or a group of records.
 
+###Acknowledgements
+
+This project would not have been possible without the help of the following:
+
+Our Professors, Tutors and my groupmate
+
+Geeksforgeeks
+
+Stackoverflow
+
+Wikipedia
+
+Hackerrank
+
+We hope this project helps people manage their accounts better and provides everyone with a basic idea of accounting principles.
+
+Adding
+Deleting
+Searching
+Ratios
+Income Statements
+This projects contains everything needed for accounting.
