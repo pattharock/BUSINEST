@@ -35,3 +35,4 @@ As previously stated, one of the main purpose of our project is to assist firms 
 - One additional function within the program will be used to prepare financial statements such as income statement for the company to reflect upon their financial position.
 
 - Records can be either searched according to Record ID (assigned to each transaction by the system). A multiple search function has also been implemented wherein records can be searched accourding to one field, and then multiple searches can be carried out within the previously searched records based on other fields, so that the user can narrow down to a single record or a group of records.
+
