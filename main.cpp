@@ -56,8 +56,15 @@ int main()
             }
         }
         if(opt==4)
-        {
-            EDIT_RECORD(r,rid);
+        {   
+            if(rid==0)
+            {
+                cout <<"No records have been added!" << endl;
+            }
+            else
+            {    
+                EDIT_RECORD(r,rid);
+            }
         }
         if(opt==5)
         {
