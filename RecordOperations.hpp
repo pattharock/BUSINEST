@@ -23,12 +23,12 @@ void ENLARGE(record *&r, int &n)
 //This function is used to add a record to the dynamic array
 void ADD_RECORD(record *&r, int &n)
 {
-    if(rid>=n)
+    if(rid>=n)  //enlarges the size of the array if number of records are greater than the arrray size
     {
         ENLARGE(r, n);
     }
-    r[rid].transaction();
-    ofstream fout ("Records.txt", ios::app);
+    r[rid].transaction();  
+    ofstream fout ("Records.txt", ios::app); //appends new records to the file
     if(fout.fail())
     {
         cout << "Error in opening file!" << endl;
@@ -47,17 +47,17 @@ void DELETE_RECORD(record *&r, int &id, int &n)
     cout << endl << endl << endl;
     cout << "Please enter the id of the record you want to delete: ";
     cin >> rid_num;
-    record * r_new = new record[n-1];
+    record * r_new = new record[n-1]; //since we are deleting a record, the array size decreases.
     for (int i = 0; i < id; i++)
     {
-        if(i+1>=rid_num)
+        if(i+1>=rid_num) 
         {
             if(i==id-1)
             {
                 break;
             }
             r_new[i] = r[i+1];
-            r_new[i].rec_id = i+1;
+            r_new[i].rec_id = i+1; //We keep on building the new array until it reaches the position of the deleted element. Afterwards, i-th element of the new array is equal to the (i+1)th of the old array since the new array has one less element.
         }
         else
         {
@@ -67,7 +67,7 @@ void DELETE_RECORD(record *&r, int &id, int &n)
     delete [] r;
     r = r_new;
     n-=1;
-    id-=1;
+    id-=1;    //id and array size decreases by 1 since we are deleting an element.
     ofstream fout ("Records.txt");
     if (fout.fail())
     {
@@ -101,18 +101,18 @@ void EDIT_RECORD(record *&r,int &rid)
     cout << endl << endl << endl;
     cout << "Enter the RECORD ID of the record to edit: ";
     int recid, original = rid;
-    cin>>recid;
+    cin>>recid;  //input the record id we want to edit.
     for(int i=0;i<rid;i++)
     {
         if(r[i].rec_id == recid)
         {
             cout<< "Record Found !" <<endl;
-            rid = recid-1;
+            rid = recid-1;  //we decrease rid by 1 in order to match the array index
             r[i].transaction();
             rid = original;
         }
     }
-    ofstream fout ("Records.txt");
+    ofstream fout ("Records.txt");  //since we updated the records, we update the record.txt file
     for(int i=0;i<rid;i++)
     {
         fout << r[i].d.dd << "/" << r[i].d.mm << "/" << r[i].d.yy << " " << i+1 << " " << r[i].rec_title << " " << r[i].rec_type << " " << r[i].acc << " " << r[i].amt << endl;
@@ -126,7 +126,7 @@ void MULTIPLE_SEARCH(record *&r, int rid)
     cout << endl << endl << endl;
     int dat, mon, year, choice, count=0;
     string title, type, acc;
-    double amount;
+    double amount;       //these are all the various parameters of our choices.
     vector<record>ls;
     cout << "1. Search by date" << endl;
     cout << "2. Search by title" << endl;
@@ -138,7 +138,7 @@ void MULTIPLE_SEARCH(record *&r, int rid)
     cout << "Choice: ";
     cin >> choice;
     cout << endl << endl << endl;
-    while (true)
+    while (true)   //count==1 is the first search. It scans the entire array and when the parameters match, the matching records are stored in the vector.
     {
         ++count;
         if(choice==1)
@@ -146,7 +146,7 @@ void MULTIPLE_SEARCH(record *&r, int rid)
             cout<<"Enter the date in dd/mm/yy format: ";
             cin >> dat >> mon >> year;
             cout << endl << endl << endl;
-            if(count>1)
+            if(count>1)   //When count is greater than 1, we are searching from the pool of records which matched the first search and were stored in the vectors. Hence, by this searching mechanism, we can isolate specific records by one parameter and search furthur using other parameters.
             {
                 int c=ls.size(),d=0;
                 for(int i=0;d<c;++i)
@@ -167,7 +167,7 @@ void MULTIPLE_SEARCH(record *&r, int rid)
                     ++d;
                 }
             }
-            else if(count==1)
+            else if(count==1)  
             {
                 int j = 0;
                 for(int i=0;i<rid;++i)
@@ -359,11 +359,11 @@ void MULTIPLE_SEARCH(record *&r, int rid)
         }
         else if(choice==6)
         {
-            MULTIPLE_SEARCH(r,rid);
+            MULTIPLE_SEARCH(r,rid);   //recursion which repeats the process creating a new vector and restarting the search
         }
         else if(choice==-1)
         {
-            ls.clear();
+            ls.clear();  //clears the vector
             break;
         }
         cout << endl << endl << endl;
@@ -415,7 +415,7 @@ void SEARCH_RECORD(record *&r, int rid)
 void BALANCE_CHECK(record *&r, int rid, int &mc, int &md, int &mcc)
 {
     int mc0=0, md0=0, mcc0=0;
-    for(int i = 0;i<rid;++i)
+    for(int i = 0;i<rid;++i)  //After every transaction, this function continuously checks whether the balances exceeded the giving limit or not.
     {
         if (r[i].rec_type=="Expense" && r[i].acc=="Cash")
         {
