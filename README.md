@@ -37,11 +37,7 @@ As previously stated, one of the main purpose of our project is to assist firms 
 
 - Records can be either searched according to Record ID (assigned to each transaction by the system). A multiple search function has also been implemented wherein records can be searched accourding to one field, and then multiple searches can be carried out within the previously searched records based on other fields, so that the user can narrow down to a single record or a group of records.
 
-###Acknowledgements
-
-This project would not have been possible without the help of the following:
-
-Our Professors, Tutors and my groupmate
+### Acknowledgements
 
 Geeksforgeeks
 
@@ -51,11 +47,3 @@ Wikipedia
 
 Hackerrank
 
-We hope this project helps people manage their accounts better and provides everyone with a basic idea of accounting principles.
-
-Adding
-Deleting
-Searching
-Ratios
-Income Statements
-This projects contains everything needed for accounting.
